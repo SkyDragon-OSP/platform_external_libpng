@@ -37,7 +37,7 @@ my_src_files_intel := \
     contrib/intel/intel_init.c \
     contrib/intel/filter_sse2_intrinsics.c
 
-common_CFLAGS := -std=gnu89 -Wno-unused-parameter #-fvisibility=hidden ## -fomit-frame-pointer
+common_CFLAGS := -std=gnu89 -Wno-unused-parameter
 
 # For the host
 # =====================================================
@@ -110,6 +110,7 @@ include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_CLANG := true
+LOCAL_SDCLANG_LTO := true
 LOCAL_SRC_FILES := $(common_SRC_FILES)
 LOCAL_SRC_FILES_arm := $(my_src_files_arm)
 LOCAL_SRC_FILES_arm64 := $(my_src_files_arm)
